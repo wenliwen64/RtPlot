@@ -13,7 +13,32 @@ namespace rtplot{
 		/*
 		 * The name parameter can be specified for use scenario, like kkiller, gamma...
 		 */
-		if(name == "gamma"){
+		if(name == "vanilla"){
+		    RtStyle* style = new RtStyle();
+		    style->setLegendTextSize(.075);
+		    style->setXLabelSize(0.045);
+		    style->setXTitleOffset(.9);
+		    style->setXTitleSize(.055);
+		    style->setYTitleOffset(.65);
+		    style->setYTitleSize(.065);
+		    style->setXMin(0);
+		    style->setXMax(10);
+		    style->setMarkerSize(2);
+		    style->setLegendHeight(.065);
+		    style->setLegendWidth(.10);
+		    style->setAxisDigits(2);
+		    style->setPadTopMargin(.06);
+		    style->setPadBottomMargin(0.12);
+		    style->setPadRightMargin(.01);
+		    style->setPadLeftMargin(0.12);
+		    style->setLineWidth(2.0);
+		    style->setYDivision(503);
+		    style->setXDivision(505);
+		    style->setXLabelFont(42);
+		    style->setYLabelFont(42);
+		    return style;
+		}
+		else if(name == "gamma"){
 		    RtStyle* style = new RtStyle();
 		    style->setLegendTextSize(.075);
 		    style->setXLabelSize(0);

@@ -37,8 +37,13 @@ namespace rtplot{
 		return ptr_instance;
 	    }
 
-	    static TCanvas* getDivCan(TCanvas* can, int nRows, int nCols, RtStyle* style){
+	    static TCanvas* getDivCan(TCanvas* can, int nRows, int nCols, const RtStyle* style){
 		can->Divide(nCols, nRows, 0, 0);
+		for(int i = 0; i != nCols * nRows; ++i){
+		    can->cd(i + 1);
+		    gPad->SetTicks(1, 1);
+		    gPad->SetMargin(style->getPadLeftMargin(), style->getPadRightMargin(), style->getPadBottomMargin(), style->getPadTopMargin());
+		}
 		return can;
 	    }
 
@@ -125,6 +130,7 @@ namespace rtplot{
 		histGraph->GetYaxis()->SetLabelSize(style->getYLabelSize());
 		histGraph->GetYaxis()->SetNdivisions(style->getYDivision());
 		histGraph->GetYaxis()->CenterTitle();
+		histGraph->GetXaxis()->CenterTitle();
 		histGraph->GetXaxis()->SetTitleSize(style->getXTitleSize());
 		histGraph->GetXaxis()->SetTitleOffset(style->getXTitleOffset());
 		histGraph->GetXaxis()->SetLabelSize(style->getXLabelSize());

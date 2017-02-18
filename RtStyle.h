@@ -32,8 +32,8 @@ class RtStyle{
 		  m_PadRightMargin(1.0),
 		  m_PadTopMargin(1.0),
 		  m_PadBottomMargin(1.0),
-                  m_XTitle("Y"),
-                  m_YTitle("X"),
+                  m_XTitle(""),
+                  m_YTitle(""),
 		  m_XLabelFont(42),
 		  m_YLabelFont(42)
     {}
