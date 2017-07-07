@@ -29,7 +29,7 @@ namespace rtplot{
 		    style->setAxisDigits(2);
 		    style->setPadTopMargin(.06);
 		    style->setPadBottomMargin(0.12);
-		    style->setPadRightMargin(.01);
+		    style->setPadRightMargin(.10);
 		    style->setPadLeftMargin(0.12);
 		    style->setLineWidth(2.0);
 		    style->setYDivision(503);
