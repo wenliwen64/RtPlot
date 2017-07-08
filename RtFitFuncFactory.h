@@ -26,6 +26,14 @@ namespace rtfitfunc{
 		TF1* f1 = new TF1(func_name, "[0] * TMath::Erf(x - [1]) + [2]", x_min, x_max);
 		return f1; 
 	    }
+
+	    static TF1* GetExpEffFunc(double x_min, double x_max){
+		++count;
+		char func_name[100];
+		sprintf(func_name, "expeff_%d", count);
+		TF1* f1 = new TF1(func_name, "[0] * exp(-pow([1] / x, [2]))", x_min, x_max);
+		return f1;
+	    }
     };
     RtFitFuncFactory* RtFitFuncFactory::ptr_instance = 0;
     int RtFitFuncFactory::count = 0;
