@@ -32,6 +32,10 @@ namespace rtfitfunc{
 		char func_name[100];
 		sprintf(func_name, "expeff_%d", count);
 		TF1* f1 = new TF1(func_name, "[0] * exp(-pow([1] / x, [2]))", x_min, x_max);
+               
+		f1->SetParameter(0, .3);
+		f1->SetParameter(1, .2);
+		f1->SetParameter(2, 3.);
 		return f1;
 	    }
     };
